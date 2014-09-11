@@ -25,9 +25,6 @@ fancy_echo "Installing ImageMagick, to crop and resize images ..."
 fancy_echo "Installing QT, used by Capybara Webkit for headless Javascript integration testing ..."
   brew_install_or_upgrade 'qt'
 
-fancy_echo "Installing watch, to execute a program periodically and show the output ..."
-  brew_install_or_upgrade 'watch'
-
 node_version="0.10"
 
 fancy_echo "Installing NVM, Node.js, and NPM, for running apps and installing JavaScript packages ..."
@@ -43,3 +40,12 @@ fancy_echo "Installing NVM, Node.js, and NPM, for running apps and installing Ja
 
   fancy_echo "Setting $node_version as the global default nodejs..."
   nvm alias default "$node_version"
+
+fancy_echo "Installing karma, a TestRunner for Javascript"
+  sudo npm install -g karma-cli
+
+fancy_echo "Installing gpg, for encrypting and signing your data and communication"
+  brew_install_or_upgrade 'gpg'
+
+fancy_echo "Installing mongodb"
+  brew_install_or_upgrade 'mongodb'

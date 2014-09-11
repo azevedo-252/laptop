@@ -1,0 +1,17 @@
+if [ ! -d $HOME/dotfiles ]; then
+  fancy_echo "Setting up groupbuddies' dotfiles"
+    git clone git://github.com/groupbuddies/dotfiles.git $HOME/dotfiles
+fi
+
+if [ ! -d $HOME/dotfiles-local ]; then
+  fancy_echo "Setting up my dotfiles"
+    git clone git://github.com/azevedo-252/dotfiles.git $HOME/dotfiles-local
+fi
+
+if [ ! -e $HOME/.rcrc ]; then
+  fancy_echo "Copying .rcrc to the home folder"
+    cp $HOME/dotfiles-local/rcrc $HOME/.rcrc
+fi
+
+fancy_echo "Creating dotfiles symlinks into the home folder"
+  rcup

@@ -1,0 +1,23 @@
+fancy_echo "Adding and installing caskroom/cask to homebrew"
+  brew tap caskroom/cask
+  brew_install_or_upgrade 'brew-cask'
+
+fancy_echo "Installing development tools from homebrew ..."
+  brew cask install iterm2
+  brew cask install google-chrome
+  brew cask install firefox
+  brew cask install slack
+  brew cask install hipchat
+  brew cask install alfred
+
+fancy_echo "Installing other recreational tools from homebrew ..."
+  brew cask install dropbox
+  brew cask install spotify
+  brew cask install skype
+  brew cask install vlc
+  brew cask install subtitles
+  brew cask install transmission
+  brew cask install tvshows
+  brew cask install caffeine
+  brew cask install spectacle
+  brew cask install bettertouchtool

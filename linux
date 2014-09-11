@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 ### end common-components/bash-shebang
 
-# Welcome to the thoughtbot laptop script! Be prepared to turn your laptop (or
-# desktop, no haters here) into an awesome development machine.
-
-# This file is auto-generated. Do not edit it by hand unless you know what
-# you're doing. Please see 'CONTRIBUTING.md' for more information.
 ### end common-components/header
 
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
@@ -15,15 +10,6 @@ set -e
 
 if [[ ! -d "$HOME/.bin/" ]]; then
   mkdir "$HOME/.bin"
-fi
-
-if [ ! -f "$HOME/.zshrc" ]; then
-  touch $HOME/.zshrc
-fi
-
-if [[ ":$PATH:" != *":$HOME/.bin:"* ]]; then
-  printf 'export PATH="$HOME/.bin:$PATH"\n' >> ~/.zshrc
-  export PATH="$HOME/.bin:$PATH"
 fi
 ### end common-components/check-home-bin
 
@@ -142,20 +128,6 @@ if [[ ! -d "$HOME/.rbenv/plugins/ruby-build" ]]; then
 fi
 ### end linux-components/rbenv
 
-ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
-
-fancy_echo "Installing Ruby $ruby_version ..."
-  rbenv install -s "$ruby_version"
-
-fancy_echo "Setting $ruby_version as global default Ruby ..."
-  rbenv global "$ruby_version"
-  rbenv rehash
-
-fancy_echo "Updating to latest Rubygems version ..."
-  gem update --system
-
-fancy_echo "Installing Bundler to install project-specific Ruby gems ..."
-  gem install bundler --no-document --pre
 ### end common-components/ruby-environment
 
 fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
@@ -163,12 +135,6 @@ fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
   bundle config --global jobs $((number_of_cores - 1))
 ### end linux-components/bundler
 
-fancy_echo "Installing Suspenders, thoughtbot's Rails template ..."
-  gem install suspenders --no-document
-
-fancy_echo "Installing Parity, shell commands for development, staging, and
-production parity ..."
-  gem install parity --no-document
 ### end common-components/default-gems
 
 fancy_echo "Installing Heroku CLI client ..."
@@ -189,9 +155,5 @@ fancy_echo "Installing rcm, to manage your dotfiles ..."
   rm -f /tmp/rcm_1.1.0_all.deb
 ### end linux-components/rcm
 
-fancy_echo "Installing your personal additions from ~/.laptop.local ..."
-  if [[ -f ~/.laptop.local ]]; then
-    source ~/.laptop.local
-  fi
 ### end common-components/personal-additions
 
