@@ -17,6 +17,8 @@ versions are welcome.
 
 ### Linux
 
+IT IS BROKEN RIGHT NOW
+
 We support:
 
 * [14.04: Trusty Tahr](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes),
@@ -31,9 +33,11 @@ Install
 
 Read, then run the script:
 
-    bash <(curl -s https://raw.githubusercontent.com/thoughtbot/laptop/master/mac) 2>&1 | tee ~/laptop.log
+    bash <(curl -s https://raw.githubusercontent.com/azevedo-252/laptop/master/mac) 2>&1 | tee ~/laptop.log
 
 ### Linux
+
+IT IS BROKEN RIGHT NOW
 
 Read, then run the script:
 
@@ -43,10 +47,7 @@ Debugging
 ---------
 
 Your last Laptop run will be saved to `~/laptop.log`. Read through it to see if
-you can debug the issue yourself. If not, copy the lines where the script
-failed into a [new GitHub
-Issue](https://github.com/thoughtbot/laptop/issues/new) for us. Or, attach the
-whole log file as an attachment.
+you can debug the issue yourself.
 
 What it sets up
 ---------------
@@ -104,49 +105,6 @@ Laptop can be run multiple times on the same machine safely. It will upgrade
 already installed packages and install and activate a new version of ruby (if
 one is available).
 
-Make your own customizations
-----------------------------
-
-Put your customizations in `~/.laptop.local`. For example, your
-`~/.laptop.local` might look like this:
-
-    #!/bin/sh
-
-    brew tap caskroom/cask
-    brew install brew-cask
-
-    brew cask install dropbox
-    brew cask install google-chrome
-    brew cask install rdio
-
-You should write your customizations such that they can be run safely more than
-once. See the `mac` and `linux` scripts for examples.
-
-Laptop'ed Linux Vagrant boxes
------------------------------
-
-We now publish [Vagrant](http://vagrantup.com) boxes with the Laptop script
-applied for every supported Linux distro.
-
-Create a Vagrantfile:
-
-    vagrant init thoughtbot/ubuntu-14-04-server-with-laptop
-
-In the same directory as your Vagrantfile:
-
-    vagrant up
-    vagrant ssh
-
-Laptop'ed vagrantcloud boxes currently available:
-
-* `thoughtbot/debian-wheezy-64-with-laptop`
-* `thoughtbot/debian-jessie-64-with-laptop`
-* `thoughtbot/ubuntu-14-04-server-with-laptop`
-* `thoughtbot/ubuntu-12-04-server-with-laptop`
-
-See our [vagrantcloud profile](https://vagrantcloud.com/thoughtbot). You must
-have Vagrant >= 1.5.0 to use vagrantcloud images directly.
-
 Credits
 -------
 
@@ -155,15 +113,13 @@ Credits
 Laptop is maintained and funded by [thoughtbot, inc](http://thoughtbot.com/community).
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
-Thank you, [contributors](https://github.com/thoughtbot/laptop/graphs/contributors)!
+Thank you, [contributors](https://github.com/azevedo-252/laptop/graphs/contributors)!
 
 Contributing
 ------------
 
-Please see [CONTRIBUTING.md](https://github.com/thoughtbot/laptop/blob/master/CONTRIBUTING.md).
+Please see [CONTRIBUTING.md](https://github.com/azevedo-252/laptop/blob/master/CONTRIBUTING.md).
 
 License
 -------
 
-Laptop is © 2011-2014 thoughtbot, inc. It is free software, and may be
-redistributed under the terms specified in the LICENSE file.
