@@ -52,3 +52,6 @@ fancy_echo "Installing gpg, for encrypting and signing your data and communicati
 
 fancy_echo "Installing mongodb"
   brew_install_or_upgrade 'mongodb'
+
+fancy_echo "Installing tree"
+  brew_install_or_upgrade 'tree'
