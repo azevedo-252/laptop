@@ -55,3 +55,6 @@ fancy_echo "Installing mongodb"
 
 fancy_echo "Installing tree"
   brew_install_or_upgrade 'tree'
+
+fancy_echo "Installing highlight"
+  brew_install_or_upgrade 'highlight'
